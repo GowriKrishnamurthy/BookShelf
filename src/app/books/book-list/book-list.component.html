@@ -1,36 +1,54 @@
-<div class='card'>
-  <div class='card-header'>
-    List of books
-  </div>
-  <div class='card-body'>
-    <div class='row'>
-      <div class='col-md-1'>Filter by:</div>
-      <div class='col-md-2'>
-        <input type='text' name='filterString'/>
-      </div>
-    </div>
-    <div class='table-responsive'>
-        <table class='table'
-        >
+<div class="card">
+    <div class="card-header">List of books</div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-1">Filter by:</div>
+            <div class="col-md-2">
+                <input
+                    type="text"
+                    name="filterString"
+                >
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table">
 
-        <thead>
-            <tr>
-                <th>
-                  <button class='btn btn-primary'
-                          (click)='toggleImage()'>
-                    {{showImage ? 'Hide' : 'Show'}} Image
-                  </button>
-                </th>    
-            <th>Book title</th>
-            <th>Author</th>
-            <th>Available</th>
-            <th>Price</th>
-            <th>5 Star Rating</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
+                <thead>
+                    <tr>
+                        <th>
+                            <button
+                                class="btn btn-primary"
+                                (click)="toggleImage()"
+                            >
+                                {{showImage ? 'Hide' : 'Show'}} Image
+                            </button>
+                        </th>
+                        <th>Book Title</th>
+                        <th>Author</th>
+                        <th>Publication Date</th>
+                        <th>Price</th>
+                        <th>5 Star Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let book of list_books">
+                        <td>
+                            <img
+                                *ngIf="showImage"
+                                [src]="book.imgUrl"
+                                [title]="book.booktitle"
+                                [style.width.px]="imgWidth"
+                                [style.margin.px]="imgMargin"
+                            >
+                        </td>
+                        <td>{{ book.bookTitle }}</td>
+                        <td>{{ book.author }}</td>
+                        <td>{{ book.PublicationDate }}</td>
+                        <td>{{ book.price }}</td>
+                        <td>{{book.starRating}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-  </div>
 </div>
