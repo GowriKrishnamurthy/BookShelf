@@ -11,6 +11,7 @@ export class BookListComponent implements OnInit {
   showImage : boolean;
   imgWidth:number;
   imgMargin:number;
+  filterString:string='harry';
   list_books:IBook[]=  
   [
     {
