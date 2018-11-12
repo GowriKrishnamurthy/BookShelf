@@ -10,9 +10,17 @@
       </div>
     </div>
     <div class='table-responsive'>
-      <table class='table'>
+        <table class='table'
+        >
+
         <thead>
-          <tr>
+            <tr>
+                <th>
+                  <button class='btn btn-primary'
+                          (click)='toggleImage()'>
+                    {{showImage ? 'Hide' : 'Show'}} Image
+                  </button>
+                </th>    
             <th>Book title</th>
             <th>Author</th>
             <th>Available</th>
