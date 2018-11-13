@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IBook } from '../models/book.model';
 
 @Component({
-  selector: 'bh-book-list',
+  selector: 'bookshelf-book-list',
   templateUrl: './book-list.component.html',
   styleUrls: ['./book-list.component.css']
 })
