@@ -50,7 +50,7 @@
                         <td>{{ book.bookTitle }}</td>
                         <td>{{ book.author }}</td>
                         <td>{{ book.PublicationDate }}</td>
-                        <td>{{ book.price }}</td>
+                        <td>{{ book.price  | currency:'USD':'symbol':'1.2-2' }}</td>
                         <td>{{book.starRating}}</td>
                     </tr>
                 </tbody>
