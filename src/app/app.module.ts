@@ -5,11 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BookListComponent } from './books/book-list/book-list.component';
+import { ConvertCharToSpacePipe } from './shared/convert-char-to-space.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BookListComponent
+    BookListComponent,
+    ConvertCharToSpacePipe
   ],
   imports: [
     BrowserModule,
