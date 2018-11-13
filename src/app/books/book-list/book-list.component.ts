@@ -8,55 +8,73 @@ import { IBook } from '../models/book.model';
 })
 export class BookListComponent implements OnInit {
   pageTitle = 'Book List';
-  showImage : boolean;
-  imgWidth:number;
-  imgMargin:number;
-  filterString:string='harry';
-  list_books:IBook[]=  
-  [
-    {
-      "bookID": 1,
-      "bookTitle": "Harry Potter and the Chamber of Secrets ",
-      "bookCode": "HP-002",
-      "author":"J. K. Rowling",
-      "PublicationDate": "July 2, 1998",
-      "price": 12.95,
-      "description": "Harry Potter and the Chamber of Secrets",
-      "starRating": 4.6,
-      "imgUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Chamber_of_Secrets#/media/File:Harry_Potter_and_the_Chamber_of_Secrets.jpg"
-    },
-    {
+  showImage: boolean;
+  imgWidth: number;
+  imgMargin: number;
+  _filterString: string = '';
+  get filterString(): string {
+    return this._filterString;
+  }
+  set filterString(value: string) {
+    this._filterString = value;
+    this.filteredBooks = this.filterString ? this.filterBooksByTitle(this.filterString) : this.list_books;
+  }
+
+  filteredBooks: IBook[] = [];
+
+  list_books: IBook[] =
+    [
+      {
+        "bookID": 1,
+        "bookTitle": "Harry Potter and the Chamber of Secrets ",
+        "bookCode": "HP-002",
+        "author": "J. K. Rowling",
+        "PublicationDate": "July 2, 1998",
+        "price": 12.95,
+        "description": "Harry Potter and the Chamber of Secrets",
+        "starRating": 4.6,
+        "imgUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Chamber_of_Secrets#/media/File:Harry_Potter_and_the_Chamber_of_Secrets.jpg"
+      },
+      {
         "bookID": 2,
         "bookTitle": "Harry Potter and the Prisoner of Azkaban",
         "bookCode": "HP-002",
-        "author":"J. K. Rowling",
+        "author": "J. K. Rowling",
         "PublicationDate": "July 8, 1999",
         "price": 14.95,
         "description": "Harry Potter and the Prisoner of Azkaban",
         "starRating": 4.5,
         "imgUrl": "https://upload.wikimedia.org/wikipedia/en/a/a0/Harry_Potter_and_the_Prisoner_of_Azkaban.jpg"
       },
-      
+
       {
         "bookID": 3,
         "bookTitle": "Geronimo Stilton: The Kingdom of Fantasy",
         "bookCode": "HP-003",
-        "author":"Elisabetta Dami",
+        "author": "Elisabetta Dami",
         "PublicationDate": "September 15, 2003",
         "price": 12,
         "description": "Geronimo Stilton: The Kingdom of Fantasy",
         "starRating": 4.1,
         "imgUrl": "http://t0.gstatic.com/images?q=tbn:ANd9GcRwMHdBo5Efe48a1T3eQ6mY0LeQbeXSOB99OGRP-yYtHvBcY2oG"
       }
-  ];
-    
-  constructor() { }
+    ];
+
+  constructor() {
+    this.filteredBooks = this.list_books;
+  }
 
   ngOnInit() {
-    this.showImage=false;
+    this.showImage = false;
     this.imgWidth = 50;
-    this.imgMargin= 2;
+    this.imgMargin = 2;
+  }
 
+
+  filterBooksByTitle(filterBy: string): IBook[] {
+    filterBy = filterBy.toLocaleLowerCase();
+    return this.list_books.filter((book: IBook) =>
+      book.bookTitle.toLocaleLowerCase().indexOf(filterBy) !== -1);
   }
 
   toggleImage(): void {
