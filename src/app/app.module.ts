@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClient} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -21,8 +21,8 @@ import { StarComponent } from './shared/star/star.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
-    HttpClient
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
