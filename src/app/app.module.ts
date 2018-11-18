@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClient} from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -7,6 +8,7 @@ import { AppComponent } from './app.component';
 import { BookListComponent } from './books/book-list/book-list.component';
 import { ConvertCharToSpacePipe } from './shared/convert-char-to-space.pipe';
 import { StarComponent } from './shared/star/star.component';
+
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import { StarComponent } from './shared/star/star.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClient
   ],
   providers: [],
   bootstrap: [AppComponent]
