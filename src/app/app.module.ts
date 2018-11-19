@@ -9,6 +9,7 @@ import { BookListComponent } from './books/book-list/book-list.component';
 import { ConvertCharToSpacePipe } from './shared/convert-char-to-space.pipe';
 import { StarComponent } from './shared/star/star.component';
 import { WelcomeComponent } from './home/welcome/welcome.component';
+import { BookDetailsComponent } from './books/book-details/book-details.component';
 
 
 
@@ -18,7 +19,8 @@ import { WelcomeComponent } from './home/welcome/welcome.component';
     BookListComponent,
     ConvertCharToSpacePipe,
     StarComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    BookDetailsComponent
   ],
   imports: [
     BrowserModule,
