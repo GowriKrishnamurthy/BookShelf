@@ -13,6 +13,7 @@ export class BookListComponent implements OnInit {
   imgWidth: number;
   imgMargin: number;
   _filterString: string = '';
+  errorMessage:string;
 
   get filterString(): string {
     return this._filterString;
@@ -36,7 +37,8 @@ export class BookListComponent implements OnInit {
        books=>{
         this.list_books=books;
         this.filteredBooks = this.list_books;
-       }
+       },
+       error=>this.errorMessage=<any>error
      );
     
   }
