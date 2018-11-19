@@ -32,8 +32,13 @@ export class BookListComponent implements OnInit {
     this.showImage = false;
     this.imgWidth = 50;
     this.imgMargin = 2;
-    this.list_books = this.bookService.getBooks();
-    this.filteredBooks = this.list_books;
+     this.bookService.getBooks().subscribe(
+       books=>{
+        this.list_books=books;
+        this.filteredBooks = this.list_books;
+       }
+     );
+    
   }
 
 
