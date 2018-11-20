@@ -33,6 +33,7 @@
                                 {{showImage ? 'Hide' : 'Show'}} Image
                             </button>
                         </th>
+                        <th>Book ID</th>
                         <th>Book Title</th>
                         <th>Author</th>
                         <th>Publication Date</th>
@@ -52,9 +53,14 @@
                             >
                         </td>
                         <td>
-                            {{ book.bookCode | lowercase | convertCharToSpace: '-' }}
+                            {{book.bookID}}
+                            <!-- {{ book.bookCode | lowercase | convertCharToSpace: '-' }} -->
                         </td>
-                        <td>{{ book.bookTitle }}</td>
+                        <td>
+                            <a [routerLink]="['/books',book.bookID]">
+                                {{ book.bookTitle }}
+                            </a>
+                        </td>
                         <td>{{ book.author }}</td>
                         <td>{{ book.PublicationDate }}</td>
                         <td>
