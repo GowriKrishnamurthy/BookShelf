@@ -10,8 +10,7 @@ import { ConvertCharToSpacePipe } from './shared/convert-char-to-space.pipe';
 import { StarComponent } from './shared/star/star.component';
 import { WelcomeComponent } from './home/welcome/welcome.component';
 import { BookDetailsComponent } from './books/book-details/book-details.component';
-
-
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -26,6 +25,13 @@ import { BookDetailsComponent } from './books/book-details/book-details.componen
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    RouterModule.forRoot([
+      { path: 'books', component: BookListComponent },
+      { path: 'book:/id', component: BookDetailsComponent },
+      { path: 'welcome', component: WelcomeComponent },
+      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+      { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
+    ]),
     AppRoutingModule
   ],
   providers: [],
