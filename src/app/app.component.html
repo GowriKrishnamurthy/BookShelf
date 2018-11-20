@@ -3,6 +3,20 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <bookshelf-book-list></bookshelf-book-list>
- <router-outlet></router-outlet> 
+
+  <nav class='navbar navbar-expand navbar-light bg-light'>
+    
+    <ul class='nav nav-pills'>
+      <li>
+        <a class='nav-link' routerLinkActive='active' [routerLink]="['/welcome']">Home</a>
+      </li>
+      <li>
+        <a class='nav-link' routerLinkActive='active' [routerLink]="['/books']">Books List</a>
+      </li>
+    </ul>
+  </nav>
+  <div class='container'>
+    <router-outlet></router-outlet>
+  </div>
+
 </div>
