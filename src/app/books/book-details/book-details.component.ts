@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { IBook } from '../models/book.model';
 
 @Component({
   // No need of selector as we are not going to nest this component in any component
@@ -11,11 +12,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BookDetailsComponent implements OnInit {
 
+  pageTitle:string='Book details';
+  book:IBook;
+
   constructor(private activatedRoute: ActivatedRoute) {
-    console.log(this.activatedRoute.snapshot.paramMap.get('id'));
   }
 
   ngOnInit() {
+    let id= +this.activatedRoute.snapshot.paramMap.get('id') ;
+    this.pageTitle += `: ${id}`;
   }
 
 }
