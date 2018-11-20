@@ -27,7 +27,7 @@ import { RouterModule } from '@angular/router';
     HttpClientModule,
     RouterModule.forRoot([
       { path: 'books', component: BookListComponent },
-      { path: 'book:/id', component: BookDetailsComponent },
+      { path: 'book/:id', component: BookDetailsComponent },
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
