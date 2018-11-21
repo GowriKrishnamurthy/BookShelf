@@ -12,8 +12,7 @@ export class BookDetailGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     const id = +next.url[1].path;
     if (isNaN(id) || id < 1) {
-      alert('Invalid book Id');
-      this.router.navigate(['/books']);
+      this.router.navigate(['/error']);
       return false;
     }
     return true;
