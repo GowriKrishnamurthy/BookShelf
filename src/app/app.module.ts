@@ -12,6 +12,7 @@ import { WelcomeComponent } from './home/welcome/welcome.component';
 import { BookDetailsComponent } from './books/book-details/book-details.component';
 import { RouterModule } from '@angular/router';
 import { BookDetailGuard } from './books/book-detail.guard';
+import { ErrorComponent } from './shared/error/error.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BookDetailGuard } from './books/book-detail.guard';
     ConvertCharToSpacePipe,
     StarComponent,
     WelcomeComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,7 @@ import { BookDetailGuard } from './books/book-detail.guard';
         component: BookDetailsComponent 
       },
       { path: 'welcome', component: WelcomeComponent },
+      { path: 'error', component: ErrorComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ]),
