@@ -7,8 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './home/welcome/welcome.component';
 import { RouterModule } from '@angular/router';
-import { BookDetailGuard } from './books/book-detail.guard';
 import { ErrorComponent } from './shared/error/error.component';
+import { BookModule } from './books/book.module';
 
 @NgModule({
   declarations: [
