@@ -1,20 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './home/welcome/welcome.component';
 import { RouterModule } from '@angular/router';
 import { ErrorComponent } from './shared/error/error.component';
 import { BookModule } from './books/book.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent,
-    ErrorComponent
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +24,8 @@ import { BookModule } from './books/book.module';
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ]),
     AppRoutingModule,
-    BookModule
+    BookModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
