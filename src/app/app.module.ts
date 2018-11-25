@@ -18,7 +18,6 @@ import { BookModule } from './books/book.module';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },
